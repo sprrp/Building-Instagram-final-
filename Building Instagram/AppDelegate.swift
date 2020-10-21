@@ -6,14 +6,24 @@
 //
 
 import UIKit
+import Parse
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "q2nLfdezd1sEuLNYtuCsZI2VmmfLQHntsS8PI2FO"
+            $0.clientKey = "PD2kipLZTvUKSvuYzt9FqCiwQR0UKi4fuS7bGV98"
+            $0.server = "https://parseapi.back4app.com/"
+        }
+        Parse.initialize(with: configuration)
         return true
     }
 
@@ -29,6 +39,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func saveInstallationObject(){
+            if let installation = PFInstallation.current(){
+                installation.saveInBackground {
+                    (success: Bool, error: Error?) in
+                    if (success) {
+                        print("You have successfully connected your app to Back4App!")
+                    } else {
+                        if let myError = error{
+                            print(myError.localizedDescription)
+                        }else{
+                            print("Uknown error")
+                        }
+                    }
+                }
+            }
     }
 
 
