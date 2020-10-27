@@ -8,7 +8,8 @@ target 'Building Instagram' do
 
   # Pods for Building Instagram
 	pod 'Parse'
-pod "AlamofireImage"
+	pod "AlamofireImage"
+	pod "MessageInputBar"
   target 'Building InstagramTests' do
     inherit! :search_paths
     # Pods for testing
