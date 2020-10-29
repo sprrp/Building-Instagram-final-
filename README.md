@@ -50,4 +50,4 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/sprrp/Building-Instagram/blob/main/Instagram.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/sprrp/Building-Instagram-final-/blob/main/Instagram.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
